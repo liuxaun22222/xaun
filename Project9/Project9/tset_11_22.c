@@ -282,18 +282,78 @@ int main()
 //	}
 //	return 0;
 //}
+//int main()
+//{
+//	int a = 0;
+//	scanf("%d", &a);
+//	int count = 0;
+//	while (a)
+//	{
+//		int n = 0;
+//		scanf("%d", &n);
+//		count += n;
+//		a--;
+//	}
+//	printf("%d", count);
+//	return 0;
+////}
+//int main()
+//{
+//	int *a;
+//	int *pc = &a;
+//	*pc = 0;
+//	return 0;
+////}
+//int main()
+//{
+//	int a = 0;
+//	int arr[100] = { 0 };
+//	scanf("%d", &a);
+//	int i = 0;
+//	int max = 0;
+//	int mid = 100;
+//	for (i = 0; i < a; i++)
+//	{
+//		scanf("%d", &arr[i]);
+//	}
+//	for (i = 0; i < a; i++)
+//	{
+//		if (arr[i] > max)
+//		{
+//			max = arr[i];
+//		}
+//		if (arr[i] < mid)
+//			mid = arr[i];
+//	}
+//	printf("%d\n", max - mid);
+//	return 0;
+//}
 int main()
 {
 	int a = 0;
+	int arr[50] = { 0 };
 	scanf("%d", &a);
-	int count = 0;
-	while (a)
+	int i = 0;
+	for(i=0;i<a;i++)
 	{
-		int n = 0;
-		scanf("%d", &n);
-		count += n;
-		a--;
+		scanf("%d", &arr[i]);
 	}
-	printf("%d", count);
+	for (i = 0; i < a; i++)
+	{
+		int j = 0;
+		for (j = 0; j < a; j++)
+		{
+			if (arr[j] < arr[j + 1])
+			{
+				int tmp = arr[j];
+				arr[j] = arr[j + 1];
+				arr[j + 1] = tmp;
+			}
+		}
+	}
+	for (i = 0; i < 5; i++)
+	{
+		printf("%d ", arr[i]);
+	}
 	return 0;
 }
