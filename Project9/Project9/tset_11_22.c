@@ -712,22 +712,208 @@ int main()
 //		}
 //	}
 //	return 0;
+////}
+//#include <assert.h>
+//void my_strcpy(char* str, char* stre)
+//{
+//	assert(str != NULL);
+//	assert(stre != NULL);
+//	while (*str++ = *stre++)
+//	{
+//		;
+//	}
 //}
-#include <assert.h>
-void my_strcpy(char* str, char* stre)
+//int main()
+//{
+//	char arr1[] = "###############";
+//	char arr2[] = "bit";;
+//	my_strcpy(arr1, arr2);
+//	printf("%s\n",  arr1);;
+//	return 0;
+////}
+//int main()
+//{
+//	int numms[] = { 0 };
+//	int target = 0;
+//	scanf("%d", &target);
+//	return 0;
+////}
+//int main()
+//{
+//	int arr[10][10] = { 0 };
+//	int arr1[10][10] = { 0 };
+//	int a = 0;
+//	int b = 0;
+//	scanf("%d%d", &a, &b);
+//	int i = 0;
+//	for (i = 0; i < a; i++)
+//	{
+//		int j = 0;
+//		for (j = 0; j < b; j++)
+//		{
+//			scanf("%d", &arr[i][j]);
+//		}
+//	}
+//	for (i = 0; i < a; i++)
+//	{
+//		int j = 0;
+//		for (j = 0; j < b; j++)
+//		{
+//			scanf("%d", &arr1[i][j]);
+//			if (arr[i][j] != arr1[i][j])
+//			{
+//				printf("no\n");
+//			}
+//		}
+//	}
+//	printf("yes\n");
+//	return 0;
+////}
+//int main()
+//{
+//	int arr[10][10] = { 0 };
+//	int a = 0;
+//	int b = 0;
+//	scanf("%d%d", &a, &b);
+//	int sum = 0;
+//	int i = 0;
+//	for (i = 0; i < a; i++)
+//	{
+//		int j = 0;
+//		for (j = 0; j < b; j++)
+//		{
+//			scanf("%d", &arr[i][j]);
+//			if (arr[i][j] > 0)
+//			{
+//				sum += arr[i][j];
+//			}
+//		}
+//	}
+//	printf("%d\n", sum);
+//	return 0;
+////}
+//int main()
+//{
+//	int arr[20][20] = { 0 };
+//	int a = 0;
+//	scanf("%d", &a);
+//	int i = 0;
+//	for (i = 0; i < 20; i++)
+//	{
+//		int j = 0;
+//		for (j = 1; j <= 20; j++)
+//		{
+//			arr[i][j-1] = j;
+//		}
+//	}
+//	for (i = 0; i <a; i++)
+//	{
+//		int j = 0;
+//		for (j = 0; j <20; j++)
+//		{
+//			if (arr[0][j] <= a)
+//			{
+//				printf("%d ", arr[i][j]);
+//			}
+//			if(arr[1][j] )
+//		}
+//		printf("\n");
+//	}
+//	return 0;
+////}
+//void mp(int arr[], int sz)
+//{
+//	int i = 0;
+//	for (i = 0; i < sz-1; i++)
+//	{
+//		int j = 0;
+//		for (j = 1; j <= sz -1; j++)
+//		{
+//			if (arr[j-1] > arr[j])
+//			{
+//				int tmp = arr[j-1];
+//				arr[j-1] = arr[j];
+//				arr[j] = tmp;
+//			}
+//		}
+//	}
+//}
+//int main()
+//{
+//	int arr[10] = { 10,9,8,7,6,5,4,3,2,1 };
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	mp(arr, sz);
+//	int i = 0;
+//	for (i = 0; i < sz; i++)
+//	{
+//		printf("%d ", arr[i]);
+//	}
+//	return 0;
+////}
+//void init(int arr[],int sz)
+//{
+//	int i = 0;
+//	for (i = 0; i < sz; i++)
+//	{
+//		arr[i] = 0;
+//	}
+//}
+//void print(int arr[], int sz)
+//{
+//	int i = 0;
+//	for (i = 0; i < sz; i++)
+//	{
+//		printf("%d ", arr[i]);
+//	}
+//}
+//void reverse(int arr[], int sz)
+//{
+//	int laft = 0;
+//	int lafth = sz - 1;
+//	while (laft < lafth)
+//	{
+//		int tmp = arr[laft];
+//		arr[laft] = arr[lafth];
+//		arr[lafth] = tmp;
+//		laft++;
+//		lafth--;
+//	}
+//}
+//int main()
+//{
+//	int arr[10] = { 10,9,8,7,6,5,4,3,2,1 };
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	//init(arr,sz);
+//	reverse(arr, sz);
+//	print(arr, sz);
+//	return 0;
+//}
+void Exchange(int arr1[], int arr2[], int sz)
 {
-	assert(str != NULL);
-	assert(stre != NULL);
-	while (*str++ = *stre++)
+	int i = 0;
+	for (i = 0; i < sz; i++)
 	{
-		;
+		int tmp = arr1[i];
+		arr1[i] = arr2[i];
+		arr2[i] = tmp;
 	}
 }
 int main()
 {
-	char arr1[] = "###############";
-	char arr2[] = "bit";;
-	my_strcpy(arr1, arr2);
-	printf("%s\n",  arr1);;
+	int arr1[] = { 1,2,3,4,5 };
+	int arr2[] = { 6,7,8,9,10 };
+	int sz = sizeof(arr1) / sizeof(arr1[0]);
+	Exchange(arr1, arr2, sz);
+	int i = 0;
+	printf("arr1=");
+	for (i = 0; i < sz; i++)
+	{
+		printf("%d ", arr1[i]);
+	}
+	printf("\narr2 = ");
+	for (i = 0; i < sz; i++)
+	{
+		printf("%d ", arr2[i]);
+	}
 	return 0;
 }
