@@ -887,33 +887,173 @@ int main()
 //	reverse(arr, sz);
 //	print(arr, sz);
 //	return 0;
+////}
+//void Exchange(int arr1[], int arr2[], int sz)
+//{
+//	int i = 0;
+//	for (i = 0; i < sz; i++)
+//	{
+//		int tmp = arr1[i];
+//		arr1[i] = arr2[i];
+//		arr2[i] = tmp;
+//	}
 //}
-void Exchange(int arr1[], int arr2[], int sz)
-{
-	int i = 0;
-	for (i = 0; i < sz; i++)
-	{
-		int tmp = arr1[i];
-		arr1[i] = arr2[i];
-		arr2[i] = tmp;
-	}
-}
+//int main()
+//{
+//	int arr1[] = { 1,2,3,4,5 };
+//	int arr2[] = { 6,7,8,9,10 };
+//	int sz = sizeof(arr1) / sizeof(arr1[0]);
+//	Exchange(arr1, arr2, sz);
+//	int i = 0;
+//	printf("arr1=");
+//	for (i = 0; i < sz; i++)
+//	{
+//		printf("%d ", arr1[i]);
+//	}
+//	printf("\narr2 = ");
+//	for (i = 0; i < sz; i++)
+//	{
+//		printf("%d ", arr2[i]);
+//	}
+//	return 0;
+////}
+//int main()
+//{
+//	char* p = "abcdhf";
+//	*p = 'q';
+//	printf("%s\n", p);
+//	return 0;
+////}
+//int main()
+//{
+//	unsigned char a = 256;
+//	printf("%d ", a);
+//	return 0;
+////}
+//int erar(int m, int n)
+//{
+//	int i = m^n;
+//	int count = 0;
+//	while (i)
+//	{
+//		i = i & (i - 1);
+//		count++;;
+//	}
+//	return count;
+//}
+//int main()
+//{
+//	int m = 0;
+//	int n = 0;
+//	scanf("%d%d", &m, &n);
+//	int ret = erar(m, n);
+//	printf("不同的有:>%d\n", ret);
+//	return 0;
+////}
+//void print(int a)
+//{
+//	int i = 0;
+//	for (i =31; i >= 1; i-=2)
+//	{
+//		printf("%d ", (a >> i)& 1);
+//	}
+//	printf("\n");
+//	for (i = 30; i >= 0; i -= 2)
+//	{
+//		printf("%d ", (a >> i) &1);
+//	}
+//}
+//int main()
+//{
+//	int a = 0;
+//	scanf("%d", &a);
+//	print(a);
+//	return 0;
+////}
+//int Boh(int a)
+//{
+//	int i = 0;
+//	int count = 0;
+//	for (i = 0; i < 32; i++)
+//	{
+//		if (((a >> i) & 1) == 1)
+//		{
+//			count++;
+//		}
+//	}
+//	return count;
+//}
+//int main()
+//{
+//	int a = 0;
+//	scanf("%d", &a);
+//	int ret = Boh(a);
+//	printf("%d\n", ret);
+//	return 0;
+////}
+//int main()
+//{
+//	int a = 0;
+//	int b = 0;
+//	scanf("%d%d", &a, &b);
+//	a = a ^ b;
+//	b = a ^ b;
+//	a = a ^ b;
+//	printf("%d %d\n", a, b);
+//	return 0;
+////}
+//int main()
+//{
+//	int a = 0;
+//	int n = 0;
+//	scanf("%d%d", &a,&n);
+//	int i = 0;
+//	int sum = 0;
+//	int tmp = 0;
+//	for (i = 0; i < n; i++)
+//	{
+//		tmp = tmp * 10 + a;
+//		sum += tmp;
+//	}
+//	printf("%d\n", sum);
+//	return 0;
+////}
+//#include <math.h>
+//int main()
+//{
+//	int i = 0;
+//	for (i = 0; i < 1000000; i++)
+//	{
+//		int n = i;
+//		int count = 1;
+//		int sum = 0;
+//		while (n/10)
+//		{
+//			count++;
+//			n = n / 10;
+//		}
+//		int tmp = i;
+//		while (tmp)
+//		{
+//			sum += pow(tmp%10, count);
+//			tmp /= 10;
+//		}
+//		if (sum == i)
+//		{
+//			printf("%d ", i);
+//		}
+//	}
+//	return 0;
+//}
 int main()
 {
-	int arr1[] = { 1,2,3,4,5 };
-	int arr2[] = { 6,7,8,9,10 };
-	int sz = sizeof(arr1) / sizeof(arr1[0]);
-	Exchange(arr1, arr2, sz);
+	int arr[10] = { 1,2,3,4,5,6,7,8,9,10 };
+	int sz = sizeof(arr) / sizeof(arr[0]);
+	int* p = arr;
 	int i = 0;
-	printf("arr1=");
 	for (i = 0; i < sz; i++)
 	{
-		printf("%d ", arr1[i]);
-	}
-	printf("\narr2 = ");
-	for (i = 0; i < sz; i++)
-	{
-		printf("%d ", arr2[i]);
+		printf("%d ", *(p + i));
 	}
 	return 0;
 }
