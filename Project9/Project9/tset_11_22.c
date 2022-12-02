@@ -1044,16 +1044,193 @@ int main()
 //		}
 //	}
 //	return 0;
+////}
+//int main()
+//{
+//	int arr[10] = { 1,2,3,4,5,6,7,8,9,10 };
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	int* p = arr;
+//	int i = 0;
+//	for (i = 0; i < sz; i++)
+//	{
+//		printf("%d ", *(p + i));
+//	}
+//	return 0;
 //}
-int main()
+////函数指针数组计算器
+//void mexi()
+//{
+//	printf("##################################\n");
+//	printf("######    1.加    2.减    ########\n");
+//	printf("######    3.乘    4.除    ########\n");
+//	printf("######   5.异或  0. 退出  ########\n");
+//	printf("##################################\n");
+//}
+//int Ala(int x, int y)
+//{
+//	return x + y;
+//}
+//int Blb(int x, int y)
+//{
+//	return x - y;
+//}
+//int Clc(int x, int y)
+//{
+//	return x * y;
+//}
+//int Dld(int x, int y)
+//{
+//	return x / y;
+//}
+//int Ele(int x, int y)
+//{
+//	return x ^ y;
+//}
+//int main()
+//{
+//	int ipunt = 0;
+//	int x = 0;
+//	int y = 0;
+//	int (*p[])(int, int) = { 0,Ala,Blb,Clc,Dld ,Ele};
+//	do
+//	{
+//		mexi();
+//		printf("请选择：>");
+//		scanf("%d", &ipunt);
+//		if (ipunt >= 0 && ipunt <= 5)
+//		{
+//			printf("请输入两个数：");
+//			scanf("%d%d", &x, &y);
+//			printf("%d\n", p[ipunt](x, y));
+//		}
+//		else if (ipunt == 0)
+//		{
+//			printf("退出\n");
+//		}
+//		else
+//		{
+//			printf("选择错误\n");
+//		}
+//		/*switch (ipunt)
+//		{
+//		case 1:
+//			printf("%d\n",Ala(x, y));
+//			break;
+//		case 2:
+//			printf("%d\n", Blb(x, y));
+//			break;
+//		case 3:
+//			printf("%d\n", Clc(x, y));
+//			break;
+//		case 4:
+//			printf("%d\n", Dld(x, y));
+//			break;
+//		case 0:
+//			printf("退出\n");
+//			break;
+//		default:
+//			printf("选择错误\n");
+//		}*/
+//	} while (ipunt);
+////}
+//#include <stdio.h>
+//#include <string.h>
+//int main()
+//{
+//	char a[51], * p, b[100];
+//	int count = 0, len = 0, i, len1 = 0;
+//	scanf("%s", a);
+//	int n;
+//	scanf("%d", &n);
+//	while (n--)
+//	{
+//		getchar();
+//		scanf("%s", b);
+//		len = strlen(b);
+//		p = strstr(b, a);
+//		if (p)
+//		{
+//			for (i = 0; i < len; i++)
+//			{
+//				if (b[i] == ' ')
+//					count++;
+//				printf("%c", b[i]);
+//				if (count == 2)
+//					i = len;
+//			}
+//		}
+//	}
+//	return 0;
+//}
+#include <stdlib.h>
+#include <string.h>
+struct Str
 {
-	int arr[10] = { 1,2,3,4,5,6,7,8,9,10 };
+	char nema[20];
+	int sge;
+};
+int par(const void* p1, const void* p2)
+{
+	return (*(int*)p1) - (*(int*)p2);
+}
+void tset1()
+{
+	int arr[] = { 10,9,8,7,6,5,4,3,2,1 };
 	int sz = sizeof(arr) / sizeof(arr[0]);
-	int* p = arr;
+	qsort(arr, sz, sizeof(arr[0]), par);
 	int i = 0;
 	for (i = 0; i < sz; i++)
 	{
-		printf("%d ", *(p + i));
+		printf("%d ", arr[i]);
 	}
+	printf("\n");
+}
+int struc_t(const void* p1, const void* p2)
+{
+	return ((struct Str*)p1)->sge - ((struct Str*)p2)->sge;
+}
+int struc_ts(const void* p1, const void* p2)
+{
+	return strcmp(((struct Str*)p1)->nema, ((struct Str*)p2)->nema);
+}
+void tset2()
+{
+	struct Str s[3] = {{"zhansan", 30} ,{"lisi",20} ,{"liwud",10}};
+	int sz = sizeof(s) / sizeof(s[0]);
+	qsort(s, sz, sizeof(s[0]), struc_t);
+	int i = 0;
+	for (i = 0; i < sz; i++)
+	{
+		printf("%d ", s[i].sge);
+	}
+	printf("\n");
+	qsort(s, sz, sizeof(s[0]), struc_ts);
+	for (i = 0; i < sz; i++)
+	{
+		printf("%s ", s[i].nema);
+	}
+	printf("\n");
+}
+int floare(const void* f1, const void* f2)
+{
+	return (int)((*(float*)f1) - (*(float*)f2));
+}
+void tset3()
+{
+	float f[] = { 10.0,9.0,8.0,7.0,6.0,5.0,4.0,3.0,2.0,1.0 };
+	int sz = sizeof(f) / sizeof(f[0]);
+	qsort(f, sz, sizeof(f[0]), floare);
+	int i = 0;
+	for (i = 0; i < sz; i++)
+	{
+		printf("%.1f  ", f[i]);
+	}
+	printf("\n");
+}
+int main()
+{
+	tset1();
+	tset2();
+	tset3();
 	return 0;
 }
