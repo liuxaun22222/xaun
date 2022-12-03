@@ -1161,76 +1161,188 @@ int main()
 //		}
 //	}
 //	return 0;
+////}
+//#include <stdlib.h>
+//#include <string.h>
+//struct Str
+//{
+//	char nema[20];
+//	int sge;
+//};
+//void cpm(char* e1, char* e2, int s)
+//{
+//	int i = 0;
+//	for (i = 0; i < s; i++)
+//	{
+//		char tmp = *e1;
+//		*e1 = *e2;
+//		*e2 = tmp;
+//		e1++;
+//		e2++;
+//	}
 //}
-#include <stdlib.h>
-#include <string.h>
-struct Str
-{
-	char nema[20];
-	int sge;
-};
-int par(const void* p1, const void* p2)
-{
-	return (*(int*)p1) - (*(int*)p2);
-}
-void tset1()
-{
-	int arr[] = { 10,9,8,7,6,5,4,3,2,1 };
-	int sz = sizeof(arr) / sizeof(arr[0]);
-	qsort(arr, sz, sizeof(arr[0]), par);
-	int i = 0;
-	for (i = 0; i < sz; i++)
-	{
-		printf("%d ", arr[i]);
-	}
-	printf("\n");
-}
-int struc_t(const void* p1, const void* p2)
-{
-	return ((struct Str*)p1)->sge - ((struct Str*)p2)->sge;
-}
-int struc_ts(const void* p1, const void* p2)
-{
-	return strcmp(((struct Str*)p1)->nema, ((struct Str*)p2)->nema);
-}
-void tset2()
-{
-	struct Str s[3] = {{"zhansan", 30} ,{"lisi",20} ,{"liwud",10}};
-	int sz = sizeof(s) / sizeof(s[0]);
-	qsort(s, sz, sizeof(s[0]), struc_t);
-	int i = 0;
-	for (i = 0; i < sz; i++)
-	{
-		printf("%d ", s[i].sge);
-	}
-	printf("\n");
-	qsort(s, sz, sizeof(s[0]), struc_ts);
-	for (i = 0; i < sz; i++)
-	{
-		printf("%s ", s[i].nema);
-	}
-	printf("\n");
-}
-int floare(const void* f1, const void* f2)
-{
-	return (int)((*(float*)f1) - (*(float*)f2));
-}
-void tset3()
-{
-	float f[] = { 10.0,9.0,8.0,7.0,6.0,5.0,4.0,3.0,2.0,1.0 };
-	int sz = sizeof(f) / sizeof(f[0]);
-	qsort(f, sz, sizeof(f[0]), floare);
-	int i = 0;
-	for (i = 0; i < sz; i++)
-	{
-		printf("%.1f  ", f[i]);
-	}
-	printf("\n");
-}
+//void my_qsort(void* be, int sz, int swi, int (*pat)(const void* p1,const void* p2))
+//{
+//	int i = 0;
+//	for (i = 0; i < sz - 1; i++)
+//	{
+//		int j = 0;
+//		for (i = 0; j < sz - i - 1; i++)
+//		{
+//			if (pat((char*)be + j * swi, (char*)be + (j + 1) * swi) > 0)
+//			{
+//				cpm((char*)be + j * swi, (char*)be + (j + 1) * swi, swi);
+//			}
+//		}
+//	}
+//}
+//int par(const void* p1, const void* p2)
+//{
+//	return (*(int*)p1) - (*(int*)p2);
+//}
+//void tset1()
+//{
+//	int arr[] = { 10,9,8,7,6,5,4,3,2,1 };
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	my_qsort(arr, sz, sizeof(arr[0]), par);
+//	int i = 0;
+//	for (i = 0; i < sz; i++)
+//	{
+//		printf("%d ", arr[i]);
+//	}
+//	printf("\n");
+//}
+//int struc_t(const void* p1, const void* p2)
+//{
+//	return ((struct Str*)p1)->sge - ((struct Str*)p2)->sge;
+//}
+//int struc_ts(const void* p1, const void* p2)
+//{
+//	return strcmp(((struct Str*)p1)->nema, ((struct Str*)p2)->nema);
+//}
+//void tset2()
+//{
+//	struct Str s[3] = {{"zhansan", 30} ,{"lisi",20} ,{"liwud",10}};
+//	int sz = sizeof(s) / sizeof(s[0]);
+//	my_qsort(s, sz, sizeof(s[0]), struc_t);
+//	int i = 0;
+//	for (i = 0; i < sz; i++)
+//	{
+//		printf("%d ", s[i].sge);
+//	}
+//	printf("\n");
+//	qsort(s, sz, sizeof(s[0]), struc_ts);
+//	for (i = 0; i < sz; i++)
+//	{
+//		printf("%s ", s[i].nema);
+//	}
+//	printf("\n");
+//}
+//int floare(const void* f1, const void* f2)
+//{
+//	return (int)((*(float*)f1) - (*(float*)f2));
+//}
+//void tset3()
+//{
+//	float f[] = { 10.0,9.0,8.0,7.0,6.0,5.0,4.0,3.0,2.0,1.0 };
+//	int sz = sizeof(f) / sizeof(f[0]);
+//	my_qsort(f, sz, sizeof(f[0]), floare);
+//	int i = 0;
+//	for (i = 0; i < sz; i++)
+//	{
+//		printf("%.1f  ", f[i]);
+//	}
+//	printf("\n");
+//}
+////void cpm(char* e1, char* e2, int s)
+////{
+////	int i = 0;
+////	for (i = 0; i < s; i++)
+////	{
+////		char tmp = *e1;
+////		*e1 = *e2;
+////		*e2 = tmp;
+////		*e1++;
+////		*e2++;
+////	}
+////}
+////void my_qsort(void* be, int sz, int swi,int(*stm)(void* e1,void* e2))
+////{
+////	int i = 0;
+////	for (i = 0; i < sz - 1; i++)
+////	{
+////		int j = 0;
+////		for (i = 0; j < sz - i - 1; i++)
+////		{
+////			if (stm((char*)be + i * swi, (char*)be + (j + 1) * swi) > 0)
+////			{
+////				cpm((char*)be + i * swi, (char*)be + (j + 1) * swi, swi);
+////			}
+////		}
+////	}
+////}
+//int main()
+//{
+//	tset1();
+//	//tset2();
+//	//tset3();
+//	return 0;
+//}
+//
+//#include <string.h>
+//void negativesequence(char* ret)
+//{
+//	char* laft = ret;
+//	char* latch = ret + strlen(ret) - 1;
+//	while(laft<latch)
+//	{
+//		char a = *laft;
+//		*laft = *latch;;
+//		*latch = a;
+//		laft++;
+//		latch--;
+//	}
+//}
+//int main()
+//{
+//	char a[100] = "\0";
+//	gets(a);
+//	negativesequence(a);
+//	printf("%s\n", a);
+//	return 0;
+//}
 int main()
 {
-	tset1();
-	tset2();
-	tset3();
+	int n = 0;
+	while(scanf("%d", &n) != EOF)
+	{
+		int i = 0;
+		for (i = 0; i < n; i++)
+		{
+			int j = 0;
+			for (j = 0; j < n - i - 1; j++)
+			{
+				printf(" ");
+			}
+			for (j = 0; j < 2 * i + 1; j++)
+			{
+				printf("*");
+			}
+			printf("\n");
+		}
+		for (i = 0; i < n - 1; i++)
+		{
+			int j = 0;
+			for (j = 0; j <= i; j++)
+			{
+				printf(" ");
+			}
+			for (j = 0; j < 2 * (n - 1 - i) - 1; j++)
+			{
+				printf("*");
+			}
+			printf("\n");
+		}
+	}
 	return 0;
 }
