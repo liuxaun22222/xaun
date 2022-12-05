@@ -559,10 +559,145 @@
 //	printf("%d ", 3 * 5 - 6 % 4 + 5);
 //	printf("%d ", 3*5-6%4);
 //	return 0;
-
+////
+//int main()
+//{
+//	int a[4] = { 1, 2, 3, 4 };
+//	int* ptr1 = (int*)(&a + 1);
+//	int* ptr2 = (int*)((int)a + 1);
+//	printf("%x,%x", ptr1[-1], *ptr2);
+//	return 0;
+////}
+//#include <stdio.h>
+//int main()
+//{
+//	int a[3][2] = { (0, 1), (2, 3), (4, 5) };
+//	int* p;
+//	p = a[0];
+//	printf("%d", p[0]);
+//	return 0;
+////}
+//int main()
+//{
+//	int a[5][5];
+//	int(*p)[4];
+//	p = a;
+//	printf("%p,%d\n", &p[4][2] - &a[4][2], &p[4][2] - &a[4][2]);
+//	return 0;
+////}
+//int main()
+//{
+//	int aa[2][5] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+//	int* ptr1 = (int*)(&aa + 1);
+//	int* ptr2 = (int*)(*(aa + 1));
+//	printf("%d,%d", *(ptr1 - 1), *(ptr2 - 1));
+//	return 0;
+////}
+//#include <stdio.h>
+//int main()
+//{
+//	char* a[] = { "work","at","alibaba" };
+//	char** pa = a;
+//	pa++;
+//	printf("%s\n", *pa);
+//	return 0;
+////}
+//#include <stdio.h>
+//int main()
+//{
+//    int N = 5;
+//    //scanf("%d", &N);
+//    for (int i = 0; i < N; i++)
+//    {
+//        for (int j = 0; j < N - i; j++)
+//        {
+//            printf(" ");
+//        }
+//        for (int j = 0; j < i; j++)
+//        {
+//            printf("%c", (char)(j + 'A'));
+//        }
+//        for (int j = i; j >= 0; j--)
+//        {
+//            printf("%c", (char)(j + 'A'));
+//        }
+//        printf("\n");
+//    }
+//    return 0;
+////}
+//void adjust(int arr[], int sz)
+//{
+//	int lsfa = 0;//首数字
+//	int right = sz-1;//最后一个下标
+//	while(lsfa < right)
+//	//奇数
+//	{
+//		while ((lsfa < right)&&(arr[lsfa] % 2 == 1))
+//		{
+//			lsfa++;
+//		}
+//
+//		while ((lsfa < right)&&(arr[right] % 2 == 0))
+//		{
+//			right--;
+//		}
+//		if (lsfa < right)
+//		{
+//			int tmp = arr[lsfa];
+//			arr[lsfa] = arr[right];
+//			arr[right] = tmp;
+//		}
+//	}
+//}
+//void print(int arr[], int sz)
+//{
+//	int i = 0;
+//	for (i = 0; i < sz; i++)
+//	{
+//		printf("%d ", arr[i]);
+//	}
+//}
+//int main()
+//{
+//	int arr[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	adjust(arr, sz);
+//	print(arr, sz);
+//	return 0;
+////}
+//int my_strlen(char* len)
+//{
+//	int count = 0;
+//	while (*len != '\0')
+//	{
+//		count++;
+//		len++;
+//	}
+//	return count;
+//}
+//int main()
+//{
+//	char a[10] = "\0";
+//	scanf("%s",a);
+//	int ret = my_strlen(a);
+//	printf("%d\n", ret);
+//	return 0;
+//}
+char* my_strcpy(char* arr2, const char* arr1)
+{
+	char* lrn = arr2;
+	while (*arr2++ = *arr1++)
+	{
+	       ;
+	 }
+	return lrn;
+}
 int main()
 {
-	int a = 0;
-	scanf("%d", &a);
+	char arr1[] = "##########";
+	char arr2[100] = "\0";
+	my_strcpy(arr2, arr1);
+	printf("%s\n", arr2);
+	printf("%s\n", arr1);
 	return 0;
 }
