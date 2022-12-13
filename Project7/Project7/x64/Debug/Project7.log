@@ -1,2 +1,4 @@
 ﻿  main.c
-  Project7.vcxproj -> D:\c语言代码库\Project7\x64\Debug\Project7.exe
+D:\c语言代码库\Project7\Project7\main.c(717,7): warning C4047: “=”:“int *”与“int”的间接级别不同
+D:\c语言代码库\Project7\Project7\main.c(718,9): warning C4477: “printf”: 格式字符串“%d”需要类型“int”的参数，但可变参数 1 拥有了类型“int *”
+D:\c语言代码库\Project7\Project7\main.c(718,9): warning C4313: "printf": 格式字符串中的 "%d" 与类型为 "int *" 的参数 1 冲突

@@ -682,22 +682,39 @@
 //	int ret = my_strlen(a);
 //	printf("%d\n", ret);
 //	return 0;
+////}
+//char* my_strcpy(char* arr2, const char* arr1)
+//{
+//	char* lrn = arr2;
+//	while (*arr2++ = *arr1++)
+//	{
+//	       ;
+//	 }
+//	return lrn;
 //}
-char* my_strcpy(char* arr2, const char* arr1)
-{
-	char* lrn = arr2;
-	while (*arr2++ = *arr1++)
-	{
-	       ;
-	 }
-	return lrn;
-}
+//int main()
+//{
+//	char arr1[] = "##########";
+//	char arr2[100] = "\0";
+//	my_strcpy(arr2, arr1);
+//	printf("%s\n", arr2);
+//	printf("%s\n", arr1);
+//	return 0;
+////}
+//int main()
+//{
+//	int a= 10000;
+//	FILE* p = fopen("tset.txt", "wb");
+//	fwrite(&a, 4, 1, p);
+//	fclose(p);
+//	p = NULL;
+//	return 0;
+////}  
 int main()
 {
-	char arr1[] = "##########";
-	char arr2[100] = "\0";
-	my_strcpy(arr2, arr1);
-	printf("%s\n", arr2);
-	printf("%s\n", arr1);
+	int* a = NULL;
+	int b = 10;
+	a = b;
+	printf("%d\n", a);
 	return 0;
 }
